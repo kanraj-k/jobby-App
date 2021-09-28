@@ -32,10 +32,11 @@ class ProfileCard extends Component {
       method: 'GET',
     }
     const response = await fetch(apiUrl, options)
-    const data = await response.json()
-    const nd = [data.profile_details]
+    
 
     if (response.ok === true) {
+      const data = await response.json()
+    const nd = [data.profile_details]
       const formattedUser = nd.map(each => ({
         name: each.name,
         profileImageUrl: each.profile_image_url,
