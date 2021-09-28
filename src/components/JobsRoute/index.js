@@ -85,8 +85,9 @@ class Job extends Component {
     }
 
     const response = await fetch(apiUrl, options)
-    const data = await response.json()
     if (response.ok === true) {
+          const data = await response.json()
+
       const formattedDetails = data.jobs.map(each => ({
         id: each.id,
         companyLogoUrl: each.company_logo_url,
